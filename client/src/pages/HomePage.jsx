@@ -18,6 +18,7 @@ function HomePage() {
   const handleDelete = id_usuario => {
     deleteUserPage(id_usuario);
     navigate('/');
+    navigate(0);
   };
 
   const handleAdd = () => {
@@ -30,7 +31,7 @@ function HomePage() {
         className='btn-delete'
         onClick={() => handleAdd()}
       >
-        Add
+        Add+
       </button>
       <h1 className='text-2xl font-bold mb-6'>Lista de Usuarios</h1>
       <div className='overflow-x-auto'>
