@@ -122,25 +122,6 @@ function UserDetailPage() {
               className='form-input'
             />
           </div>
-
-          <div className='form-row'>
-            <label
-              htmlFor='date'
-              className='form-label'
-            >
-              Fecha Registro:
-            </label>
-            <input
-              type='date'
-              id='date'
-              name='date'
-              value={inputs.date}
-              onChange={handleInputChange}
-              className='form-input date-input'
-              readOnly
-            />
-          </div>
-
           <div className='button-group'>
             <button
               type='button'
