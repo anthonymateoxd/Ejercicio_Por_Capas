@@ -1,5 +1,7 @@
 import sql from 'mssql';
 
+// PRUEBA
+
 const dbSettings = {
   server: 'myfreesqldbservermateo.database.windows.net',
   database: 'myFreeDB',
