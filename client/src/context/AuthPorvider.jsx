@@ -24,7 +24,6 @@ export const AuthProvider = ({ children }) => {
     try {
       const result = await getRequest();
       setUsers(result.data);
-      console.log(result.data);
     } catch (error) {
       console.error(error);
     }
@@ -34,7 +33,6 @@ export const AuthProvider = ({ children }) => {
     try {
       const result = await getRequestUser(id_usuario);
       setUsers(result.data[0]);
-      console.log(result.data[0]);
     } catch (error) {
       console.error(error);
     }
@@ -44,7 +42,6 @@ export const AuthProvider = ({ children }) => {
     try {
       const result = await putRequest(user, id_usuario);
       setUsers(result.data); // Update state with the response data
-      console.log('User updated successfully:', result);
       return result; // Optional, if you want to return the result
     } catch (error) {
       console.error('Update failed:', error);
@@ -54,7 +51,6 @@ export const AuthProvider = ({ children }) => {
   const deleteUserPage = async id_usuario => {
     try {
       const result = await deleteRequest(id_usuario);
-      console.log('User deleted successfully:', result);
       return result;
     } catch (error) {
       console.error('Delete failed:', error);

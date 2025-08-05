@@ -16,7 +16,6 @@ const dbSettings = {
 export const getConnection = async () => {
   try {
     const pool = await sql.connect(dbSettings);
-    console.log('✅ Conexión exitosa a Azure SQL');
     return pool;
   } catch (error) {
     console.error('❌ Error de conexión:', error);

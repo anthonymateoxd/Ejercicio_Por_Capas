@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./client # Ruta a la carpeta del frontend
+      dockerfile: Dockerfile
+    container_name: frontend-container
+    ports:
+      - '8080:80' # Mapea el puerto 80 del host al 80 del contenedor
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./src # Ruta a la carpeta del backend
+      dockerfile: Dockerfile
+    container_name: backend-container
+    ports:
+      - '4000:4000' # Mapea el puerto 4000 del host al 4000 del contenedor
+    environment:
+      - NODE_ENV=production
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

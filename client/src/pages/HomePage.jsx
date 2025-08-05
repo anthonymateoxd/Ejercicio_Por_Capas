@@ -15,9 +15,8 @@ function HomePage() {
     navigate(`/edit/${id}`);
   };
 
-  const handleDelete = id_usuario => {
-    deleteUserPage(id_usuario);
-    navigate('/');
+  const handleDelete = async id_usuario => {
+    await deleteUserPage(id_usuario);
     navigate(0);
   };
 
